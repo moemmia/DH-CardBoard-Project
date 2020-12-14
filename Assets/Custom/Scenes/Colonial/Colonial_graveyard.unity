@@ -16370,17 +16370,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3283780387301533269, guid: b85591a506aa1ca4f917a9609cc62f82, type: 3}
   m_PrefabInstance: {fileID: 2025917404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2036718503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633508463068769619, guid: 37d4b5440ad00f94ea346a06acc6056c, type: 3}
+  m_PrefabInstance: {fileID: 2633508465101190900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2036718504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2633508463068769628, guid: 37d4b5440ad00f94ea346a06acc6056c, type: 3}
   m_PrefabInstance: {fileID: 2633508465101190900}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2036718503}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a158a7202eac27a47923649bff1d1e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2036718505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036718503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb5ab21500a1334d86b1cae060b83c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2036718506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036718503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f8a70f12d870f44a84ff69f4369cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToWait: 120
+  ActionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2036718505}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2044994062
 PrefabInstance:
   m_ObjectHideFlags: 0
