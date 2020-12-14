@@ -19,12 +19,12 @@ public class ActionController : MonoBehaviour
             ActionEvent.Invoke();
             return true;
         } else {
-            ActionSlider.value = time / timeToActivate;
+            ActionSlider?.SetValueWithoutNotify(time / timeToActivate);
             return false;
         }
     }
 
     public void ResetAction() {
-        ActionSlider.value = 0;
+        ActionSlider?.SetValueWithoutNotify(0);
     }
 }
