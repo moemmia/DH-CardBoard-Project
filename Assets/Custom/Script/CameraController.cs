@@ -6,15 +6,17 @@ public class CameraController : MonoBehaviour
 {
 
     protected Transform _transform;
-
+    protected Transform _target;
     protected RaycastHit _hit;
     protected ActionController _currentObj;
     protected float startTime;
 
-    protected float _timeToActivate;
-
-    void Start () {
+    void Awake () {
         _transform = GetComponent<Transform>();
+    }
+    
+    void Start() { 
+        _target = Camera.main.GetComponent<Transform>();
     }
 
     void Update() {
@@ -22,26 +24,25 @@ public class CameraController : MonoBehaviour
     }
 
     void CheckRayActions () {
-        if(Physics.Raycast(_transform.position, _transform.forward, out _hit)) {
-
+        if(Physics.Raycast(_target.position, _target.forward, out _hit)) {
             var h = _hit.collider.GetComponent<ActionController>();
             if (h) {
                 if(h == _currentObj){
-                    if(Time.time - startTime >= _timeToActivate) {
-                        _currentObj.Action.Invoke();
+                    if(_currentObj.Action(Time.time - startTime)){
                         startTime = Time.time;
                     }
                 } else {
+                    _currentObj?.ResetAction();
                     _currentObj = h;
                     startTime = Time.time;
-                    _timeToActivate = _currentObj.timeToActivate;
                 }
+            } else {
+                _currentObj?.ResetAction();
+                _currentObj = null;
             }
-
         } else {
-
+            _currentObj?.ResetAction();
             _currentObj = null;
-
         }
     }
 
